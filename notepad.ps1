@@ -17,4 +17,4 @@ Start-Sleep -Second 1
 Send-Keystrokes -String "notepad"
 $wsh.SendKeys('{ENTER}')
 Start-Sleep -Second 1
-Send-Keystrokes "Please remember to lock your computer when you walk away."
+Send-Keystrokes 'Please remember to lock your computer when you walk away.'
