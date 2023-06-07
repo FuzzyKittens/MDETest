@@ -12,7 +12,7 @@ function Send-Keystrokes {
 }
 
 $wsh = New-Object -ComObject WScript.Shell
-$wsh.SendKeys('^{ESC}{+}')
+$wsh.SendKeys('^{ESC}')
 Start-Sleep -Second 1
 Send-Keystrokes -String "notepad"
 $wsh.SendKeys('{ENTER}')
