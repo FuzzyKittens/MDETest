@@ -10,7 +10,7 @@ if ($taskExists) {
     }
 
 $action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument $taskArgument
-$trigger = New-ScheduledTaskTrigger -Daily -At "2:15 AM"
+$trigger = New-ScheduledTaskTrigger -Daily -At "2:16 AM"
 
 $taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -DontStopOnIdleEnd -StartWhenAvailable
 
